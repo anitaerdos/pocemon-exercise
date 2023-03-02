@@ -1,0 +1,50 @@
+.contentWrapper {
+  position: absolute;
+  display: block;
+  height:auto;
+  bottom:0;
+  top: 0;
+  left:0;
+  right:0;
+}
+
+.contentWrapper2 {
+  position: absolute;
+  display: block;
+  height:auto;
+  bottom:0;
+  top: 0;
+  left:0;
+  right:0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: calc(100vh - 80px);
+  padding: 20px;
+}
+
+.dropdown {
+  width: 100%;
+  max-width: 200px;
+  color: #000;
+}
+
+.listWrapper {
+  height: 100%;
+  width: 100%;
+  padding-top: 20px;
+  overflow: scroll;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
