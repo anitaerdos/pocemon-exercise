@@ -1,9 +1,7 @@
 import Head from "next/head";
-import { Inter } from "next/font/google";
 import styles from "@/styles/custom.module.css";
 import { TypesConsumer } from "@/context/types.context";
 import { useRouter } from "next/router";
-import { CircularProgress, InputAdornment } from "@mui/material";
 import {
   List,
   ListItem,
@@ -11,10 +9,9 @@ import {
   ListItemIcon,
   MenuItem,
   FormControl,
-  InputLabel,
-  Select,
-  SelectChangeEvent,
   TextField,
+  CircularProgress,
+  ListItemButton,
 } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import SearchIcon from "@mui/icons-material/Search";
@@ -118,7 +115,7 @@ export default function Home() {
                                     sx={{
                                       color: "#000",
                                       maxHeight: "100%",
-                                      overflow: "auto",
+                                      overflowY: "scroll",
                                       marginTop: "15px",
                                     }}
                                   >
@@ -143,26 +140,30 @@ export default function Home() {
                                               });
                                             }}
                                             sx={{
-                                              borderBottom:
-                                                "1px solid rgba(0, 0, 0, 0.2)",
-                                              borderLeft: isCatched ? "3px solid green" : "",
+                                              borderLeft: isCatched
+                                                ? "3px solid green"
+                                                : "",
                                               color: "black",
                                             }}
+                                            disablePadding
+                                            divider
                                           >
-                                            <ListItemText
-                                              primary={p.pokemon.name}
-                                              sx={{
-                                                textTransform: "capitalize",
-                                              }}
-                                            />
-                                            <ListItemIcon
-                                              sx={{ minWidth: "fit-content" }}
-                                            >
-                                              <ArrowForwardIosIcon
-                                                fontSize="small"
-                                                htmlColor="black"
+                                            <ListItemButton>
+                                              <ListItemText
+                                                primary={p.pokemon.name}
+                                                sx={{
+                                                  textTransform: "capitalize",
+                                                }}
                                               />
-                                            </ListItemIcon>
+                                              <ListItemIcon
+                                                sx={{ minWidth: "fit-content" }}
+                                              >
+                                                <ArrowForwardIosIcon
+                                                  fontSize="small"
+                                                  htmlColor="black"
+                                                />
+                                              </ListItemIcon>
+                                            </ListItemButton>
                                           </ListItem>
                                         );
                                       }
