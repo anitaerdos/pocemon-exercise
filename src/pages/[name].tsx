@@ -21,7 +21,6 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import { CatchedContext } from "@/context/catched.context";
 import { useContext, useState } from "react";
-import ArrowBackIos from "@mui/icons-material/ArrowBackIos";
 import Header from "@/components/header";
 
 export default function DetailPage() {

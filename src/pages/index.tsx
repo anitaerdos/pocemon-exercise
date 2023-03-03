@@ -15,15 +15,16 @@ import {
 } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import SearchIcon from "@mui/icons-material/Search";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { PokemonsConsumer, PokemonsProvider } from "@/context/pokemons.context";
 import { ITypePokemonProps } from "@/api/pokemonAPI";
 import { CatchedConsumer } from "@/context/catched.context";
 import Header from "../components/header";
+import { SelectedTypeContext } from "@/context/selectedType.context";
 
 export default function Home() {
   const router = useRouter();
-  const [selectedType, setSelectedType] = useState<string>("");
+  const { selectedType, setSelectedType } = useContext(SelectedTypeContext);
   const [searchText, setSearchText] = useState<string>("");
   return (
     <TypesConsumer>
