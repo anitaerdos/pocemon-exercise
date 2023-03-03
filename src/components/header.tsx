@@ -25,10 +25,10 @@ export default function Header(props: IHeaderProps) {
         paddingX: "20px",
       }}
     >
-      <IconButton onClick={() => router.push({ pathname: "/" })}>
+      <IconButton onClick={() => router.push({ pathname: "/" })} sx={{padding: 0}}>
         {headerVariations[props.pageName]}
       </IconButton>
-      <Typography sx={{ color: "white" }}>{props.pageName}</Typography>
+      <Typography sx={{ color: "white", paddingLeft: "5px" }}>{props.pageName}</Typography>
     </Box>
   );
 }
